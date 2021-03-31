@@ -37,7 +37,28 @@ data-targetpath="{{ targetpath | urlencode }}"
 <script src="{{static_url("components/requirejs/require.js") }}" type="text/javascript" charset="utf-8"></script>
 <script src="{{static_url("components/jquery/jquery.min.js") }}" type="text/javascript" charset="utf-8"></script>
 <script src="{{static_url("components/bootstrap/dist/js/bootstrap.min.js") }}" type="text/javascript" charset="utf-8"></script>
+<script src="{{static_url("components/codemirror/lib/codemirror.js") }}" type="text/javascript" charset="utf-8"></script>
 <script src="{{static_url("base/js/utils.js") }}" type="text/javascript" charset="utf-8"></script>
+<script>
+      require.config({
+          {% if version_hash %}
+          urlArgs: "v={{version_hash}}",
+          {% endif %}
+          baseUrl: '{{static_url("js", include_version=False)}}',
+          paths: {
+            components: '../components',
+            jquery: '../components/jquery/jquery.min',
+            bootstrap: '../components/bootstrap/dist/js/bootstrap.min',
+            moment: "../components/moment/moment",
+          },
+          shim: {
+            bootstrap: {
+              deps: ["jquery"],
+              exports: "bootstrap"
+            },
+          }
+      });
+</script>
 <script src="{{ base_url }}git-pull/static/index.js?v={{ version }}"></script>
 {% endblock %}
 
