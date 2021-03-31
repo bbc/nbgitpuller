@@ -34,8 +34,10 @@ data-targetpath="{{ targetpath | urlencode }}"
 
 {% block script %}
 {{super()}}
-<script src="{{ base_url }}git-pull/static/index.js?v={{ version }}">
-</script>
+<script src="{{ base_url }}git-pull/static/index.js?v={{ version }}"></script>
+<script src="{{static_url("components/requirejs/require.js") }}" type="text/javascript" charset="utf-8"></script>
+<script src="{{static_url("components/jquery/dist/jquery.min.js") }}" type="text/javascript" charset="utf-8"></script>
+<script src="{{static_url("components/bootstrap/dist/js/bootstrap.min.js") }}" type="text/javascript" charset="utf-8"></script>
 {% endblock %}
 
 {% block stylesheet %}
