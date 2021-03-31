@@ -44,7 +44,7 @@ data-targetpath="{{ targetpath | urlencode }}"
           {% if version_hash %}
           urlArgs: "v={{version_hash}}",
           {% endif %}
-          baseUrl: '{{static_url("js", include_version=False)}}',
+          baseUrl: '{{static_url("components", include_version=False)}}',
           paths: {
             components: '../components',
             jquery: '../components/jquery/jquery.min',
