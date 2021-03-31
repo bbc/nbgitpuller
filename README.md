@@ -1,3 +1,5 @@
+> This fork is a hack for working with jupyterlab 3.0 and jupyter_server 0.9 ...
+
 # [nbgitpuller](https://github.com/jupyterhub/nbgitpuller)
 
 [![TravisCI Build status](https://img.shields.io/travis/com/jupyterhub/nbgitpuller?logo=travis)](https://travis-ci.com/jupyterhub/nbgitpuller)
